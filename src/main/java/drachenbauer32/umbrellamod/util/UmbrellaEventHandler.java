@@ -78,7 +78,7 @@ public class UmbrellaEventHandler
      ** it activates an arm uo pose for holding the umbrella
      **/
     @SubscribeEvent
-    public static void onLivingRender(final RenderLivingEvent.Pre<?, BipedModel<?>> event)
+    public static void armUpPose(final RenderLivingEvent.Pre<?, BipedModel<?>> event)
     {
         final LivingEntity entity = event.getEntity();
         
