@@ -12,7 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class UmbrellaItems
 {
-    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
     
     public static final RegistryObject<Item> BLACK_UMBRELLA = ITEMS.register("black_umbrella", () -> new UmbrellaItem("black",
                         new Item.Properties().defaultMaxDamage(0).group(Umbrella.UMBRELLAS).maxStackSize(1).rarity(Rarity.COMMON).setNoRepair()));

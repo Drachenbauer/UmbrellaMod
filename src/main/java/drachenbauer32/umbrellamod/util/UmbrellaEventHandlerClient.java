@@ -1,38 +1,24 @@
 package drachenbauer32.umbrellamod.util;
 
-import drachenbauer32.umbrellamod.init.UmbrellaItems;
 import drachenbauer32.umbrellamod.items.UmbrellaItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.UseAction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.HandSide;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.event.RenderLivingEvent;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.client.model.ModelLoaderRegistry;
 
 @Mod.EventBusSubscriber(Dist.CLIENT)
-public class UmbrellaEventHandler
+public class UmbrellaEventHandlerClient
 {
-    @SubscribeEvent
-    public void onLoad(FMLClientSetupEvent event)
-    {
-        ModelLoader.addSpecialModel(new ModelResourceLocation(UmbrellaItems.BLACK_UMBRELLA.get().getRegistryName() + "_3d", "3d"));
-        ModelLoader.addSpecialModel(new ModelResourceLocation(UmbrellaItems.BLACK_UMBRELLA.get().getRegistryName() + "_gui", "gui"));
-    }
-    
     @SubscribeEvent
     public static void noFallDamage(LivingFallEvent event)
     {
@@ -102,11 +88,5 @@ public class UmbrellaEventHandler
                 }
             }
         }
-    }
-    
-    @SubscribeEvent
-    public void onModelBake(ModelRegistryEvent event)
-    { 
-        ModelLoaderRegistry.registerLoader(new ResourceLocation(Reference.MOD_ID,"separate_perspective"), UmbrellaSeparateModels.Loader.INSTANCE);
     }
 }
