@@ -1,0 +1,1 @@
+[m[36m[18:04:01] [Render thread/DEBUG] [ne.mi.re.GameData/REGISTRIES]: Holder lookups applied: minecraft:villager_profession

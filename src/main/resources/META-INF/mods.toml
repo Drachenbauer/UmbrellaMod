@@ -1,0 +1,28 @@
+modLoader="javafml" #mandatory
+loaderVersion="[31,)" #mandatory (31 is current forge version)
+credits="Drachenbauer32" #optional
+authors="Drachenbauer32" #optional
+
+[[mods]] #mandatory
+modId="umbrellamod" #mandatory
+version="0.1.0" #mandatory
+displayName="Umbrella Mod" #mandatory
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+Umgrellas in Minecraft, that can be used as a glider or closed to attack
+'''
+
+[[dependencies.umbrellamod]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[31,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+    
+# Here's another dependency
+[[dependencies.umbrellamod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+	side="BOTH"
