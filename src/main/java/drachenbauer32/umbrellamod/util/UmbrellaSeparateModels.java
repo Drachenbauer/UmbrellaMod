@@ -26,6 +26,7 @@ import net.minecraft.client.renderer.model.IBakedModel;
 import net.minecraft.client.renderer.model.IModelTransform;
 import net.minecraft.client.renderer.model.IUnbakedModel;
 import net.minecraft.client.renderer.model.ItemCameraTransforms;
+import net.minecraft.client.renderer.model.ItemModelGenerator;
 import net.minecraft.client.renderer.model.ItemOverrideList;
 import net.minecraft.client.renderer.model.Material;
 import net.minecraft.client.renderer.model.ModelBakery;
@@ -59,7 +60,18 @@ public class UmbrellaSeparateModels implements IModelGeometry<UmbrellaSeparateMo
                 baseModel.bakeModel(bakery, baseModel, spriteGetter, modelTransform, modelLocation, owner.isSideLit()),
                 ImmutableMap.copyOf(Maps.transformValues(perspectives, value ->
                 {
-                    return value.bakeModel(bakery, value, spriteGetter, modelTransform, modelLocation, owner.isSideLit());
+                    BlockModel toBake;
+                    
+                    if (value.getRootModel() == ModelBakery.MODEL_GENERATED)
+                    {
+                        toBake = new ItemModelGenerator().makeItemModel(spriteGetter, value);
+                    }
+                    else
+                    {
+                        toBake = value;
+                    }
+                    
+                    return toBake.bakeModel(bakery, value, spriteGetter, modelTransform, modelLocation, owner.isSideLit());
                 }))
         );
     }

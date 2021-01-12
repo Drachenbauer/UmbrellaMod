@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.RegistryObject;
 
 public class UmbrellaItem extends Item
 {
@@ -24,7 +25,7 @@ public class UmbrellaItem extends Item
     {
         ItemStack itemstack = new ItemStack(this);
         
-        if (color == "black")
+        /*if (color == "black")
         {
             itemstack = new ItemStack(UmbrellaItems.BLACK_UMBRELLA_CLOSE.get());
         }
@@ -131,6 +132,14 @@ public class UmbrellaItem extends Item
                         }
                     }
                 }
+            }
+        }*/
+        
+        for (RegistryObject<Item> umbrella : UmbrellaItems.UMBRELLAS)
+        {
+            if (umbrella.getId().getPath().startsWith(color))
+            {
+                itemstack = new ItemStack(umbrella.get());
             }
         }
         

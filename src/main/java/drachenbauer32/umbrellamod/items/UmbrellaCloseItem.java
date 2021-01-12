@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.RegistryObject;
 
 public class UmbrellaCloseItem extends Item
 {
@@ -28,9 +29,9 @@ public class UmbrellaCloseItem extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
-       ItemStack itemstack = new ItemStack(this);
+        ItemStack itemstack = new ItemStack(this);
         
-        if (color == "black")
+        /*if (color == "black")
         {
             itemstack = new ItemStack(UmbrellaItems.BLACK_UMBRELLA.get());
         }
@@ -137,6 +138,14 @@ public class UmbrellaCloseItem extends Item
                         }
                     }
                 }
+            }
+        }*/
+        
+        for (RegistryObject<Item> umbrella : UmbrellaItems.UMBRELLAS_CLOSE)
+        {
+            if (umbrella.getId().getPath().startsWith(color))
+            {
+                itemstack = new ItemStack(umbrella.get());
             }
         }
         
