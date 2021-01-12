@@ -1,6 +1,7 @@
 package drachenbauer32.umbrellamod.items;
 
 import drachenbauer32.umbrellamod.init.UmbrellaItems;
+import drachenbauer32.umbrellamod.util.UmbrellaColors;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
@@ -8,13 +9,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.RegistryObject;
 
 public class UmbrellaItem extends Item
 {
-    public String color;
+    public UmbrellaColors color;
     
-    public UmbrellaItem(String color, Properties properties)
+    public UmbrellaItem(UmbrellaColors color, Properties properties)
     {
         super(properties);
         this.color=color;
@@ -23,9 +23,9 @@ public class UmbrellaItem extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
-        ItemStack itemstack = new ItemStack(this);
+        /*ItemStack itemstack = new ItemStack(this);
         
-        /*if (color == "black")
+        if (color == "black")
         {
             itemstack = new ItemStack(UmbrellaItems.BLACK_UMBRELLA_CLOSE.get());
         }
@@ -135,13 +135,7 @@ public class UmbrellaItem extends Item
             }
         }*/
         
-        for (RegistryObject<Item> umbrella : UmbrellaItems.UMBRELLAS)
-        {
-            if (umbrella.getId().getPath().startsWith(color))
-            {
-                itemstack = new ItemStack(umbrella.get());
-            }
-        }
+        ItemStack itemstack = new ItemStack(UmbrellaItems.UMBRELLAS.get(color).get());
         
         EquipmentSlotType hand = EquipmentSlotType.MAINHAND;
         

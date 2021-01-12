@@ -9,11 +9,11 @@ import com.google.common.collect.Ordering;
 import drachenbauer32.umbrellamod.init.UmbrellaItems;
 import drachenbauer32.umbrellamod.util.UmbrellaItemGroup;
 import drachenbauer32.umbrellamod.util.Reference;
+import drachenbauer32.umbrellamod.util.UmbrellaColors;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -37,7 +37,7 @@ public class Umbrella
     
     private void setup(final FMLCommonSetupEvent event)
     {
-        String[] colors = {"red",
+        /*String[] colors = {"red",
                            "orange",
                            "yellow",
                            "lime",
@@ -52,19 +52,13 @@ public class Umbrella
                            "black",
                            "gray",
                            "light_gray",
-                           "white"};
+                           "white"};*/
         
         List<Item> items = new ArrayList<Item>();
         
-        for (String color : colors)
+        for (UmbrellaColors color : UmbrellaColors.values())
         {
-            for (RegistryObject<Item> umbrella : UmbrellaItems.UMBRELLAS)
-            {
-                if (umbrella.getId().getPath().startsWith(color))
-                {
-                    items.add(umbrella.get());
-                }
-            }
+             items.add(UmbrellaItems.UMBRELLAS.get(color).get());
         }
         
         /*List<Item> items = Arrays.asList(UmbrellaItems.RED_UMBRELLA.get(),

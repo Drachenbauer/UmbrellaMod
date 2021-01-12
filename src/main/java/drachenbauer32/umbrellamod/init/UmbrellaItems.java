@@ -1,14 +1,13 @@
 package drachenbauer32.umbrellamod.init;
 
-import java.util.function.Supplier;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import drachenbauer32.umbrellamod.Umbrella;
-import drachenbauer32.umbrellamod.items.UmbrellaCloseItem;
 import drachenbauer32.umbrellamod.items.UmbrellaItem;
 import drachenbauer32.umbrellamod.util.Reference;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerPotBlock;
+import drachenbauer32.umbrellamod.util.UmbrellaColors;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
 import net.minecraftforge.fml.RegistryObject;
@@ -85,48 +84,32 @@ public class UmbrellaItems
     public static final RegistryObject<Item> YELLOW_UMBRELLA_CLOSE = ITEMS.register("yellow_umbrella_close", () -> new UmbrellaCloseItem("yellow",
                         new Item.Properties().defaultMaxDamage(0).maxStackSize(1).rarity(Rarity.COMMON).setNoRepair()));*/
     
-    public static final String[] COLORS = {"black",
-                                           "blue",
-                                           "brown",
-                                           "cyan",
-                                           "gray",
-                                           "green",
-                                           "light_blue",
-                                           "light_gray",
-                                           "lime",
-                                           "magenta",
-                                           "orange",
-                                           "pink",
-                                           "purple",
-                                           "red",
-                                           "white",
-                                           "yellow"};
-    
-    public static final RegistryObject<Item>[] UMBRELLAS = new RegistryObject[COLORS.length];
-    public static final RegistryObject<Item>[] UMBRELLAS_CLOSE = new RegistryObject[COLORS.length];
+    public static final Map<UmbrellaColors, RegistryObject<Item>> UMBRELLAS = Collections.synchronizedMap(new HashMap<UmbrellaColors, RegistryObject<Item>>());
+    public static final Map<UmbrellaColors, RegistryObject<Item>> UMBRELLAS_CLOSE = Collections.synchronizedMap(new HashMap<UmbrellaColors, RegistryObject<Item>>());
     
     private static int i = 0;
     
     static
     {
-        for(String color : COLORS)
+        
+        for(UmbrellaColors color : UmbrellaColors.values())
         {
-            UMBRELLAS[i] = ITEMS.register(color + "_umbrella", () -> new UmbrellaItem("color",
+            UMBRELLAS.put(color,ITEMS.register(color.GetName() + "_umbrella", () -> new UmbrellaItem(color,
                            new Item.Properties().defaultMaxDamage(0).group(Umbrella.UMBRELLAS).
-                           maxStackSize(1).rarity(Rarity.COMMON).setNoRepair()));
+                           maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
             
-            UMBRELLAS_CLOSE[i] = ITEMS.register(color + "_umbrella_close", () -> new UmbrellaItem("color",
+            UMBRELLAS.put(color,ITEMS.register(color.GetName() + "_umbrella_close", () -> new UmbrellaItem(color,
                            new Item.Properties().defaultMaxDamage(0).group(Umbrella.UMBRELLAS).
-                           maxStackSize(1).rarity(Rarity.COMMON).setNoRepair()));
+                           maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
             
-            if (i < COLORS.length - 1)
+            if (i < UmbrellaColors.values().length - 1)
             {
                 i++;
             }
-            /*else
+            else
             {
                 i = 0;
-            }*/
+            }
         }
     }
 }

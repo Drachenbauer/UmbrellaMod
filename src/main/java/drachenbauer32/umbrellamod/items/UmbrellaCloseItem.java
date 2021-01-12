@@ -3,6 +3,7 @@ package drachenbauer32.umbrellamod.items;
 import com.google.common.collect.Multimap;
 
 import drachenbauer32.umbrellamod.init.UmbrellaItems;
+import drachenbauer32.umbrellamod.util.UmbrellaColors;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,15 +13,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.RegistryObject;
 
 public class UmbrellaCloseItem extends Item
 {
-    public String color;
+    public UmbrellaColors color;
     private final float attackDamage = 5f;
     private final float attackSpeed = 2.5f;
     
-    public UmbrellaCloseItem(String color, Properties properties)
+    public UmbrellaCloseItem(UmbrellaColors color, Properties properties)
     {
         super(properties);
         this.color=color;
@@ -29,9 +29,9 @@ public class UmbrellaCloseItem extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
-        ItemStack itemstack = new ItemStack(this);
+        /*ItemStack itemstack = new ItemStack(this);
         
-        /*if (color == "black")
+        if (color == "black")
         {
             itemstack = new ItemStack(UmbrellaItems.BLACK_UMBRELLA.get());
         }
@@ -141,13 +141,7 @@ public class UmbrellaCloseItem extends Item
             }
         }*/
         
-        for (RegistryObject<Item> umbrella : UmbrellaItems.UMBRELLAS_CLOSE)
-        {
-            if (umbrella.getId().getPath().startsWith(color))
-            {
-                itemstack = new ItemStack(umbrella.get());
-            }
-        }
+        ItemStack itemstack = new ItemStack(UmbrellaItems.UMBRELLAS.get(color).get());
         
         EquipmentSlotType hand = EquipmentSlotType.MAINHAND;
         
