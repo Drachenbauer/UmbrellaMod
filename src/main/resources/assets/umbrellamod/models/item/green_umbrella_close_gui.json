@@ -3,6 +3,6 @@
     
     "textures":
     {
-        "layer0": "item/green_umbrella_close"
+        "layer0": "umbrellamod:item/green_umbrella_close"
     }
 }

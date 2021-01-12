@@ -10,7 +10,7 @@ import net.minecraftforge.client.model.ModelLoaderRegistry;
 public class UmbrellaModBusEventHandler
 {
     @SubscribeEvent
-    public void onModelBake(ModelRegistryEvent event)
+    public static void onModelBake(ModelRegistryEvent event)
     { 
         ModelLoaderRegistry.registerLoader(new ResourceLocation(Reference.MOD_ID,"separate_perspective"), UmbrellaSeparateModels.Loader.INSTANCE);
     }

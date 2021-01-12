@@ -3,6 +3,6 @@
     
     "textures":
     {
-        "layer0": "item/light_blue_umbrella"
+        "layer0": "umbrellamod:item/light_blue_umbrella"
     }
 }

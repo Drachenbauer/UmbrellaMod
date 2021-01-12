@@ -3,6 +3,6 @@
     
     "textures":
     {
-        "layer0": "item/orange_umbrella"
+        "layer0": "umbrellamod:item/orange_umbrella"
     }
 }

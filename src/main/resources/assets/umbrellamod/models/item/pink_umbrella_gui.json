@@ -3,6 +3,6 @@
     
     "textures":
     {
-        "layer0": "item/pink_umbrella"
+        "layer0": "umbrellamod:item/pink_umbrella"
     }
 }

@@ -2,8 +2,8 @@
     "loader": "forge:obj",
     "flip-v": true,
     "ambientToFullbright": false,
-    "materialLibraryOverride": "umbrellamod:models/item/brown_umbrella.mtl",
-    "model": "umbrellamod:models/item/brown_umbrella.obj",
+    "materialLibraryOverride": "umbrellamod:models/item/brown_umbrella_3d.mtl",
+    "model": "umbrellamod:models/item/brown_umbrella_3d.obj",
     
     "display":
     {

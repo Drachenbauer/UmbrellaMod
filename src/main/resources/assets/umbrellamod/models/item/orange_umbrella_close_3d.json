@@ -2,8 +2,8 @@
     "loader": "forge:obj",
     "flip-v": true,
     "ambientToFullbright": false,
-    "materialLibraryOverride": "umbrellamod:models/item/orange_umbrella_close.mtl",
-    "model": "umbrellamod:models/item/orange_umbrella_close.obj",
+    "materialLibraryOverride": "umbrellamod:models/item/orange_umbrella_close_3d.mtl",
+    "model": "umbrellamod:models/item/orange_umbrella_close_3d.obj",
     
     "display":
     {

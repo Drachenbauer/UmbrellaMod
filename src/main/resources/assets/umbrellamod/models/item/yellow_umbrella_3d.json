@@ -2,8 +2,8 @@
     "loader": "forge:obj",
     "flip-v": true,
     "ambientToFullbright": false,
-    "materialLibraryOverride": "umbrellamod:models/item/yellow_umbrella.mtl",
-    "model": "umbrellamod:models/item/yellow_umbrella.obj",
+    "materialLibraryOverride": "umbrellamod:models/item/yellow_umbrella_3d.mtl",
+    "model": "umbrellamod:models/item/yellow_umbrella_3d.obj",
     
     "display":
     {
