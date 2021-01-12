@@ -17,7 +17,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderLivingEvent;
 
 @Mod.EventBusSubscriber(Dist.CLIENT)
-public class UmbrellaEventHandlerClient
+public class UmbrellaForgeBusClientEventHandler
 {
     @SubscribeEvent
     public static void noFallDamage(LivingFallEvent event)

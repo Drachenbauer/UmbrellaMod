@@ -6,8 +6,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
-public class UmbrellaEventHandlerModBus
+@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class UmbrellaModBusEventHandler
 {
     @SubscribeEvent
     public void onModelBake(ModelRegistryEvent event)
