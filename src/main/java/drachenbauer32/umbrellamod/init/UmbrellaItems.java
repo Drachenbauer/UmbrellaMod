@@ -6,6 +6,7 @@ import java.util.Map;
 
 import drachenbauer32.umbrellamod.Umbrella;
 import drachenbauer32.umbrellamod.items.UmbrellaItem;
+import drachenbauer32.umbrellamod.items.UmbrellaCloseItem;
 import drachenbauer32.umbrellamod.util.Reference;
 import drachenbauer32.umbrellamod.util.UmbrellaColors;
 import net.minecraft.item.Item;
@@ -98,7 +99,7 @@ public class UmbrellaItems
                            new Item.Properties().defaultMaxDamage(0).group(Umbrella.UMBRELLAS).
                            maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
             
-            UMBRELLAS.put(color,ITEMS.register(color.GetName() + "_umbrella_close", () -> new UmbrellaItem(color,
+            UMBRELLAS.put(color,ITEMS.register(color.GetName() + "_umbrella_close", () -> new UmbrellaCloseItem(color,
                            new Item.Properties().defaultMaxDamage(0).group(Umbrella.UMBRELLAS).
                            maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
             
