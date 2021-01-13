@@ -19,14 +19,13 @@ import net.minecraft.world.World;
 public class UmbrellaCloseItem extends SwordItem
 {
     public UmbrellaColors color;
-    private static final float attackDamage = 5f;
+    private static final int attackDamage = 5;
     private static final float attackSpeed = 2.5f;
-    private static final int maxDamage = 0;
     private static final IItemTier tier= ItemTier.WOOD;
     
     public UmbrellaCloseItem(UmbrellaColors color, Properties properties)
     {
-        super(tier, maxDamage, attackDamage, properties);
+        super(tier, attackDamage, attackSpeed, properties);
         this.color=color;
     }
     
@@ -65,8 +64,8 @@ public class UmbrellaCloseItem extends SwordItem
     {
       Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot, itemStack);
       if (equipmentSlot == EquipmentSlotType.MAINHAND) {
-         multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", (double)this.attackDamage, AttributeModifier.Operation.ADDITION));
-         multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", (double)this.attackSpeed, AttributeModifier.Operation.ADDITION));
+         multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", (double)UmbrellaCloseItem.attackDamage, AttributeModifier.Operation.ADDITION));
+         multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", (double)UmbrellaCloseItem.attackSpeed, AttributeModifier.Operation.ADDITION));
       }
 
       return multimap;
