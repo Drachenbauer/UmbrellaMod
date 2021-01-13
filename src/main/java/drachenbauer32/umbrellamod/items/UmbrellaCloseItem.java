@@ -8,139 +8,31 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.Item;
+import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.SwordItem;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class UmbrellaCloseItem extends Item
+public class UmbrellaCloseItem extends SwordItem
 {
     public UmbrellaColors color;
-    private final float attackDamage = 5f;
-    private final float attackSpeed = 2.5f;
+    private static final float attackDamage = 5f;
+    private static final float attackSpeed = 2.5f;
+    private static final int maxDamage = 0;
+    private static final IItemTier tier= ItemTier.WOOD;
     
     public UmbrellaCloseItem(UmbrellaColors color, Properties properties)
     {
-        super(properties);
+        super(tier, maxDamage, attackDamage, properties);
         this.color=color;
     }
     
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
-        /*ItemStack itemstack = new ItemStack(this);
-        
-        if (color == "black")
-        {
-            itemstack = new ItemStack(UmbrellaItems.BLACK_UMBRELLA.get());
-        }
-        else
-        {
-            if (color == "blue")
-            {
-                itemstack = new ItemStack(UmbrellaItems.BLUE_UMBRELLA.get());
-            }
-            else
-            {
-                if (color == "brown")
-                {
-                    itemstack = new ItemStack(UmbrellaItems.BROWN_UMBRELLA.get());
-                }
-                else
-                {
-                    if (color == "cyan")
-                    {
-                        itemstack = new ItemStack(UmbrellaItems.CYAN_UMBRELLA.get());
-                    }
-                    else
-                    {
-                        if (color == "gray")
-                        {
-                            itemstack = new ItemStack(UmbrellaItems.GRAY_UMBRELLA.get());
-                        }
-                        else
-                        {
-                            if (color == "green")
-                            {
-                                itemstack = new ItemStack(UmbrellaItems.GREEN_UMBRELLA.get());
-                            }
-                            else
-                            {
-                                if (color == "light_blue")
-                                {
-                                    itemstack = new ItemStack(UmbrellaItems.LIGHT_BLUE_UMBRELLA.get());
-                                }
-                                else
-                                {
-                                    if (color == "light_gray")
-                                    {
-                                        itemstack = new ItemStack(UmbrellaItems.LIGHT_GRAY_UMBRELLA.get());
-                                    }
-                                    else
-                                    {
-                                        if (color == "lime")
-                                        {
-                                            itemstack = new ItemStack(UmbrellaItems.LIME_UMBRELLA.get());
-                                        }
-                                        else
-                                        {
-                                            if (color == "magenta")
-                                            {
-                                                itemstack = new ItemStack(UmbrellaItems.MAGENTA_UMBRELLA.get());
-                                            }
-                                            else
-                                            {
-                                                if (color == "orange")
-                                                {
-                                                    itemstack = new ItemStack(UmbrellaItems.ORANGE_UMBRELLA.get());
-                                                }
-                                                else
-                                                {
-                                                    if (color == "pink")
-                                                    {
-                                                        itemstack = new ItemStack(UmbrellaItems.PINK_UMBRELLA.get());
-                                                    }
-                                                    else
-                                                    {
-                                                        if (color == "purple")
-                                                        {
-                                                            itemstack = new ItemStack(UmbrellaItems.PURPLE_UMBRELLA.get());
-                                                        }
-                                                        else
-                                                        {
-                                                            if (color == "red")
-                                                            {
-                                                                itemstack = new ItemStack(UmbrellaItems.RED_UMBRELLA.get());
-                                                            }
-                                                            else
-                                                            {
-                                                                if (color == "white")
-                                                                {
-                                                                    itemstack = new ItemStack(UmbrellaItems.WHITE_UMBRELLA.get());
-                                                                }
-                                                                else
-                                                                {
-                                                                    if (color == "yellow")
-                                                                    {
-                                                                        itemstack = new ItemStack(UmbrellaItems.YELLOW_UMBRELLA.get());
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }*/
-        
         ItemStack itemstack = new ItemStack(UmbrellaItems.UMBRELLAS.get(color).get());
         
         EquipmentSlotType hand = EquipmentSlotType.MAINHAND;
