@@ -1,6 +1,6 @@
 {
     //ItemGroup name
-    "itemGroup.Umbrellas": "Regenschirme",
+    "itemGroup.umbrellas": "Regenschirme",
     
     //Item names
     "item.umbrellamod.black_umbrella": "Schwarzer Regenschirm",

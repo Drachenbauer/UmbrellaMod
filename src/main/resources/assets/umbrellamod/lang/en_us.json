@@ -1,7 +1,7 @@
 
 {
     //ItemGroup name
-    "itemGroup.Umbrellas": "Umbrellas",
+    "itemGroup.umbrellas": "Umbrellas",
     
     //Item names
     "item.umbrellamod.black_umbrella": "Black Umbrella",
