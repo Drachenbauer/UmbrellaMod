@@ -15,8 +15,8 @@ public enum UmbrellaColors
     GREEN("green"),
     BROWN("brown"),
     BLACK("black"),
-    LIGHT_GRAY("light_gray"),
     GRAY("gray"),
+    LIGHT_GRAY("light_gray"),
     WHITE("white");
     
     public final String name;

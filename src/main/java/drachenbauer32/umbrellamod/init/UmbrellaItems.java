@@ -30,12 +30,12 @@ public class UmbrellaItems
         for(UmbrellaColors color : UmbrellaColors.values())
         {
             UMBRELLAS.put(color,ITEMS.register(color.GetName() + "_umbrella", () -> new UmbrellaItem(color,
-                           new Item.Properties().defaultMaxDamage(0).group(Umbrella.UMBRELLAS).
-                           maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
+                          new Item.Properties().defaultMaxDamage(0).group(Umbrella.UMBRELLAS).
+                          maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
             
-            UMBRELLAS.put(color,ITEMS.register(color.GetName() + "_umbrella_close", () -> new UmbrellaCloseItem(color,
-                           new Item.Properties().defaultMaxDamage(0).
-                           maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
+            UMBRELLAS_CLOSE.put(color,ITEMS.register(color.GetName() + "_umbrella_close", () -> new UmbrellaCloseItem(color,
+                                new Item.Properties().defaultMaxDamage(0).
+                                maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
             
             if (i < UmbrellaColors.values().length - 1)
             {

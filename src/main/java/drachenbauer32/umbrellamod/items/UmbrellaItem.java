@@ -23,7 +23,7 @@ public class UmbrellaItem extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
-        ItemStack itemstack = new ItemStack(UmbrellaItems.UMBRELLAS.get(color).get());
+        ItemStack itemstack = new ItemStack(UmbrellaItems.UMBRELLAS_CLOSE.get(color).get());
         
         EquipmentSlotType hand = EquipmentSlotType.MAINHAND;
         
