@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 public class UmbrellaItem extends Item
 {
-    public UmbrellaColors color;
+    public final UmbrellaColors color;
     
     public UmbrellaItem(UmbrellaColors color, Properties properties)
     {
@@ -29,7 +29,6 @@ public class UmbrellaItem extends Item
         
         if (playerIn.getHeldItemMainhand().getItem() == this)
         {
-            hand = EquipmentSlotType.MAINHAND;
             playerIn.setItemStackToSlot(hand, itemstack.copy());
             
             return ActionResult.resultSuccess(itemstack);
