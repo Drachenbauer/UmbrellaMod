@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    
+    "ingredients":
+    [
+        {
+            "item": "minecraft:green_dye"
+        },
+        
+        {
+            "item": "umbrellamod:white_umbrella"
+        }
+    ],
+    
+    "result":
+    {
+        "item": "umbrellamod:green_umbrella",
+        "count": 1
+    },
+    
+    "group": "umbrella"
+}

@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    
+    "ingredients":
+    [
+        {
+            "item": "minecraft:cyan_dye"
+        },
+        
+        {
+            "item": "umbrellamod:white_umbrella"
+        }
+    ],
+    
+    "result":
+    {
+        "item": "umbrellamod:cyan_umbrella",
+        "count": 1
+    },
+    
+    "group": "umbrella"
+}

@@ -12,7 +12,7 @@
     {
         "c":
         {
-            "item": "minecraft:light_gray_carpet"
+            "item": "minecraft:cob_web"
         },
         
         "s":
@@ -23,7 +23,7 @@
     
     "result":
     {
-        "item": "umbrellamod:light_gray_umbrella",
+        "item": "umbrellamod:white_umbrella",
         "count": 1
     },
     
