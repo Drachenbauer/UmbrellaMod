@@ -25,7 +25,7 @@ public enum UmbrellaColors
         this.name = name;
     }
     
-    public String GetName()
+    public String getName()
     {
         return name;
     }
