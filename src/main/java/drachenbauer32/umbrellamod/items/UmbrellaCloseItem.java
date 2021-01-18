@@ -64,7 +64,6 @@ public class UmbrellaCloseItem extends SwordItem
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving)
     {
-        // TODO Auto-generated method stub
         return true;
     }
 }

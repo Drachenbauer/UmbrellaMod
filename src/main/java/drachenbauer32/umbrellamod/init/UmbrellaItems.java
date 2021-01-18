@@ -6,9 +6,9 @@ import java.util.Map;
 
 import drachenbauer32.umbrellamod.Umbrella;
 import drachenbauer32.umbrellamod.items.UmbrellaItem;
-import drachenbauer32.umbrellamod.items.UmbrellaCloseItem;
 import drachenbauer32.umbrellamod.util.Reference;
 import drachenbauer32.umbrellamod.util.UmbrellaColors;
+import drachenbauer32.umbrellamod.items.UmbrellaCloseItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
 import net.minecraftforge.fml.RegistryObject;
@@ -29,11 +29,11 @@ public class UmbrellaItems
         
         for(UmbrellaColors color : UmbrellaColors.values())
         {
-            UMBRELLAS.put(color,ITEMS.register(color.GetName() + "_umbrella", () -> new UmbrellaItem(color,
+            UMBRELLAS.put(color, ITEMS.register(color.GetName() + "_umbrella", () -> new UmbrellaItem(color,
                           new Item.Properties().defaultMaxDamage(0).group(Umbrella.UMBRELLAS).
                           maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
             
-            UMBRELLAS_CLOSE.put(color,ITEMS.register(color.GetName() + "_umbrella_close", () -> new UmbrellaCloseItem(color,
+            UMBRELLAS_CLOSE.put(color, ITEMS.register(color.GetName() + "_umbrella_close", () -> new UmbrellaCloseItem(color,
                                 new Item.Properties().defaultMaxDamage(0).
                                 maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
             
