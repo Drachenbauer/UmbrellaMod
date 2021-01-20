@@ -22,11 +22,8 @@ public class UmbrellaItems
     public static final Map<UmbrellaColors, RegistryObject<Item>> UMBRELLAS = Collections.synchronizedMap(new HashMap<UmbrellaColors, RegistryObject<Item>>());
     public static final Map<UmbrellaColors, RegistryObject<Item>> UMBRELLAS_CLOSE = Collections.synchronizedMap(new HashMap<UmbrellaColors, RegistryObject<Item>>());
     
-    private static int i = 0;
-    
     static
     {
-        
         for(UmbrellaColors color : UmbrellaColors.values())
         {
             UMBRELLAS.put(color, ITEMS.register(color.getName() + "_umbrella", () -> new UmbrellaItem(color,
@@ -36,15 +33,6 @@ public class UmbrellaItems
             UMBRELLAS_CLOSE.put(color, ITEMS.register(color.getName() + "_umbrella_close", () -> new UmbrellaCloseItem(color,
                                 new Item.Properties().defaultMaxDamage(0).
                                 maxStackSize(1).rarity(Rarity.COMMON).setNoRepair())));
-            
-            if (i < UmbrellaColors.values().length - 1)
-            {
-                i++;
-            }
-            else
-            {
-                i = 0;
-            }
         }
     }
 }
